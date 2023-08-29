@@ -18,7 +18,10 @@ def main():
     if check_reboot():
         print("Pending Reboot.")
         sys.exit(1)
-    if check_disk_full("/", 2, 10):
+    if check_disk_full(disk="/", min_gb=2, min_percent = 10):
         print("Disk Full.")
         sys.exit(1)
+    
+    print ("Everything is Okay!")
+    sys.exit(0)
 main()
